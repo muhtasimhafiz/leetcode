@@ -1,0 +1,14 @@
+{
+  "name": "13-roman-to-integer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.3.0"
+  }
+}
