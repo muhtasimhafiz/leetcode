@@ -1,41 +1,42 @@
-function BST(value) {
-    this.value = value;
+ function BST(val) {
+    this.val = val;
     this.left = null;
     this.right = null;
 }
 
-BST.prototype.insert = function(value) {
-    if(!this.value) {
-        this.value = value;
+BST.prototype.insert = function(val) {
+    if(!val) return;
+    if(!this.val) {
+        this.val = val;
         return;
     }
 
-    if (value < this.value) {
+    if (val < this.val) {
         if (this.left === null) {
-            this.left = new BST(value);
+            this.left = new BST(val);
         } else {
-            this.left.insert(value);
+            this.left.insert(val);
         }
-    } else if (value > this.value) {
+    } else if (val > this.val) {
         if (this.right === null) {
-            this.right = new BST(value);
+            this.right = new BST(val);
         } else {
-            this.right.insert(value);
+            this.right.insert(val);
         }
     }
 };
 
-BST.prototype.remove = function(value) {
+BST.prototype.remove = function(val) {
     // Implement remove method logic here
 };
 
-BST.prototype.contains = function(value) {
-    if (value === this.value) {
+BST.prototype.contains = function(val) {
+    if (val === this.val) {
         return true;
-    } else if (value < this.value) {
-        return this.left !== null && this.left.contains(value);
+    } else if (val < this.val) {
+        return this.left !== null && this.left.contains(val);
     } else {
-        return this.right !== null && this.right.contains(value);
+        return this.right !== null && this.right.contains(val);
     }
 };
 
@@ -43,7 +44,7 @@ BST.prototype.inOrderTraversal = function(callback) {
     if (this.left !== null) {
         this.left.inOrderTraversal(callback);
     }
-    callback(this.value);
+    callback(this.val);
     if (this.right !== null) {
         this.right.inOrderTraversal(callback);
     }
@@ -53,7 +54,7 @@ BST.prototype.dfs = function(callback) {
     if (this.left !== null) {
         this.left.dfs(callback);
     }
-    callback(this.value); // Process the current node
+    callback(this.val); // Process the current node
     if (this.right !== null) {
         this.right.dfs(callback);
     }
@@ -61,12 +62,12 @@ BST.prototype.dfs = function(callback) {
 
 
 BST.prototype.bfs = function(callback) {
-    callback(this.value); // Process the current node
+    callback(this.val); // Process the current node
     let list = [this.left, this.right];
     while(list.length > 0) {
         const node = list.shift();
         if (node !== null) {
-            callback(node.value);
+            callback(node.val);
             list.push(node.left);
             list.push(node.right);
         }

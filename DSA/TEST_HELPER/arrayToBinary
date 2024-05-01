@@ -1,0 +1,24 @@
+ function BinaryTree(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+}
+export const arrayToBinary=(arr)=>{
+    let root = new BinaryTree(arr[0]);
+    let queue = [root];
+    let i = 1;
+    while (queue.length > 0 && i < arr.length) {
+        let current = queue.shift();
+        if (arr[i] !== null) {
+            current.left = new BinaryTree(arr[i]);
+            queue.push(current.left);
+        }
+        i++;
+        if (arr[i] !== null) {
+            current.right = new BinaryTree(arr[i]);
+            queue.push(current.right);
+        }
+        i++;
+    }
+    return root;
+}
