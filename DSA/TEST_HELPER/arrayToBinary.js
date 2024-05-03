@@ -5,6 +5,7 @@ function BinaryTree(val) {
 }
 
 function arrayToBinary(array) {
+  if(array.length < 1) return null;
   let binaryTree = new BinaryTree(array[0]);
   let queue = [binaryTree];
   let i = 1;

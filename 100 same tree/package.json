@@ -1,6 +1,7 @@
 {
-  "name": "121-best-time-to-buy-sell-stocks",
+  "name": "100-same-tree",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -10,9 +11,5 @@
   "license": "ISC",
   "dependencies": {
     "mocha": "^10.4.0"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "description": ""
+  }
 }
