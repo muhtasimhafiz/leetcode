@@ -1,4 +1,5 @@
-
+The provided code is used to find the next available valid slot for booking an interview session. The method 'findFirstAvailableSlot' takes the arguments 'currentTime' is always in the HH:MM format and minutes are either 30 or 00. Assume each session is always 1.5 hours which means it takes 3 half hour time slots. Suppose a user books a session at 1:00 their booked session array would be [1:00, 1:30, 2:00, 2:30]. The method 'findFirstAvailableSlot'  is supposed to find the next valid available session. I need to update the code so that when the 'currentTime' is for example 12:00 and the user has booked a session from 1:00 to 2:30 the code returns the next available slot at 12:00 instead of 02:30  which is an overlapping issue when each session is 1.5 hours
+```
 // time slots available for booking
 const availableSlots = [
     "00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30",
@@ -17,7 +18,7 @@ function findFirstAvailableSlot(currentTime, availableSlots, bookedSessions) {
         return hours + (minutes / 60);
     };
 
-    // filter out booked sessionss
+    // filter out booked sessions
     const filteredSlots = availableSlots.filter(slot => !bookedSessions.includes(slot));
     const currentTimeDecimal = timeToDecimal(currentTime);
 
@@ -35,3 +36,4 @@ const currentTime = "10:00";
 const bookedSessions = ["10:00", "10:30", "11:00"];
 
 console.log(findFirstAvailableSlot(currentTime, availableSlots, bookedSessions)); // 11:30
+```
