@@ -1,0 +1,15 @@
+{
+  "name": "33.-search-in-rotated-sorted-array",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mocha": "^10.4.0"
+  }
+}
